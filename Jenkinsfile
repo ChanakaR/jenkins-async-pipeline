@@ -1,12 +1,14 @@
 pipeline{
-    agent {
-        docker { image 'orangehrm/orangehrm-environment-images:dev-7.2-centos-orange'}
+    agent any
+    environment {
+        USER = 'Chanaka'
+        HOST = 'Bee'
     }
     stages {
         stage('Build') {
             steps {
-                echo "Hello World 1"
-                echo "Hello World 2"
+                echo "Hello World from ${USER}"
+                echo "Hello World from ${HOST}"
             }
         }
     }

@@ -1,5 +1,7 @@
 pipeline{
-    agent any
+    agent {
+        docker { image 'orangehrm/orangehrm-environment-images:dev-7.2-centos-orange'}
+    }
     stages {
         stage('Build') {
             steps {

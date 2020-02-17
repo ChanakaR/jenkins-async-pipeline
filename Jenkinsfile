@@ -5,6 +5,30 @@ pipeline{
         HOST = 'Bee'
     }
     stages {
+        stage('Run Tests') {
+            parallel {
+                stage('Test On Windows') {
+                    steps {
+                        echo "Test Windows Parallel 1"
+                    }
+                    post {
+                        always {
+                            echo "Test Windows Paralled echo"
+                        }
+                    }
+                }
+                stage('Test On Linux') {
+                    steps {
+                        echo "Test Linux Parallel 1"
+                    }
+                    post {
+                        always {
+                            echo "Test Linux Paralled echo"
+                        }
+                    }
+                }
+            }
+        }
         stage('Build') {
             steps {
                 echo "Hello World from ${USER}"

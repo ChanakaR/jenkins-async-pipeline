@@ -1,5 +1,5 @@
 pipeline{
-    agent any
+    agent none
     environment {
         USER = 'Chanaka'
         HOST = 'Bee'
@@ -8,6 +8,9 @@ pipeline{
         stage('Run Tests') {
             parallel {
                 stage('Test On Windows') {
+                    agent {
+                        label "slave-atlas"
+                    }
                     steps {
                         echo "Test Windows Parallel 1"
                     }

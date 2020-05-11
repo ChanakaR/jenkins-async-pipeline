@@ -13,7 +13,7 @@ pipeline{
                     }
                     steps {
                         echo "Test On Slave"
-                        echo "hello to pyro" >> /results/pyro.txt
+                        echo "hello to pyro" >> results/pyro.txt
                     }
                     post {
                         always {
@@ -27,7 +27,7 @@ pipeline{
                     }
                     steps {
                         echo "Test on Master"
-                        echo "hello to master" >> /results/master.txt
+                        echo "hello to master" >> results/master.txt
                     }
                     post {
                         always {

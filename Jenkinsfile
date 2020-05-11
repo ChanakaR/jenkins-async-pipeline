@@ -13,7 +13,8 @@ pipeline{
                     }
                     steps {
                         echo "Test On Slave"
-                        echo "hello to pyro" >> results/pyro.txt
+                        echo "FROM PYRO"
+                        sh "echo ${WORKSPACE}"
                     }
                     post {
                         always {
@@ -27,7 +28,8 @@ pipeline{
                     }
                     steps {
                         echo "Test on Master"
-                        echo "hello to master" >> results/master.txt
+                        echo "FROM MASTER"
+                        sh "echo ${WORKSPACE}"
                     }
                     post {
                         always {

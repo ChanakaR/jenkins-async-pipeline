@@ -12,11 +12,12 @@ pipeline{
                         label "slave-pyro"
                     }
                     steps {
-                        echo "Test Windows Parallel 1"
+                        echo "Test On Slave"
+                        echo "hello to pyro" >> /results/pyro.txt
                     }
                     post {
                         always {
-                            echo "Test Windows Paralled echo"
+                            echo "POST: Test on slave"
                         }
                     }
                 }
@@ -25,11 +26,12 @@ pipeline{
                         label "master"
                     }
                     steps {
-                        echo "Test Linux Parallel 1"
+                        echo "Test on Master"
+                        echo "hello to master" >> /results/master.txt
                     }
                     post {
                         always {
-                            echo "Test Linux Paralled echo"
+                            echo "POST: Test on master"
                         }
                     }
                 }

@@ -9,7 +9,7 @@ pipeline{
             parallel {
                 stage('Test On Windows') {
                     agent {
-                        label "slave-atlas"
+                        label "slave-pyro"
                     }
                     steps {
                         echo "Test Windows Parallel 1"

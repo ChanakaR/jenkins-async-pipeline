@@ -7,7 +7,7 @@ pipeline{
     stages {
         stage('Run Tests') {
             parallel {
-                stage('Test On Windows') {
+                stage('Test On Pyro') {
                     agent {
                         label "slave-pyro"
                     }
@@ -21,6 +21,9 @@ pipeline{
                     }
                 }
                 stage('Test On Linux') {
+                    agent {
+                        label "master"
+                    }
                     steps {
                         echo "Test Linux Parallel 1"
                     }
